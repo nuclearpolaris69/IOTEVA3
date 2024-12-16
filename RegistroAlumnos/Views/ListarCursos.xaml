@@ -26,7 +26,32 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Clicked="NuevoCursoBoton_Clicked"/>
+            <CollectionView x:Name="CursosCollection"
+                            ItemsSource="{Binding ListaCursos}"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnSpacing="10" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{Binding Nombre}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"/>
+                                
 
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Grid>
     </ScrollView>
 </ContentPage>

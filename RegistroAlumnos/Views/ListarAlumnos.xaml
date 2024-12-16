@@ -8,6 +8,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -26,7 +27,59 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Clicked="NuevoAlumnoBoton_Clicked"/>
-
+            <SearchBar Placeholder="Buscar"
+                       x:Name="filtroCursosBar"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       TextChanged="filtroCursosBar_TextChanged"/>
+            <Button Text="Ver Cursos"
+                    x:Name="VerAlumnosBoton"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Clicked="VerAlumnosBoton_Clicked"/>
+            <CollectionView x:Name="AlumnosCollection"
+                            ItemsSource="{Binding ListaAlumnos}"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnSpacing="10" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="{Binding Nombre}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{Binding Email}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"/>
+                            <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   Text="{Binding Edad}"
+                                   FontAttributes="None"
+                                   FontSize="20"/>
+                            <Label Grid.Column="0"
+                                   
+                                   Grid.Row="1"
+                                   Text="{Binding Curso.Nombre}"
+                                   FontAttributes="Italic"
+                                   FontSize="20"/>
+                            
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
         </Grid>
     </ScrollView>
 </ContentPage>

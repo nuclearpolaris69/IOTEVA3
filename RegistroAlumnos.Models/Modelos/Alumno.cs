@@ -10,8 +10,9 @@ namespace RegistroAlumnos.Models.Modelos
     {
         public string? Nombre { get; set; }
         public string? Email { get; set; }
-        public string? Edad { get; set; }
+        public int? Edad { get; set; }
 
+        public Boolean Activo { get; set; }
         public Curso? Curso { get; set; }
     }
 }

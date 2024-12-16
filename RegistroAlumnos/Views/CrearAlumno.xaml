@@ -11,9 +11,15 @@
         <Entry Placeholder="Edad"
                x:Name="edadEntry"
                Keyboard="Numeric"/>
+        <Picker Title="Seleccionar Curso"
+            ItemsSource="{Binding Cursos}"
+            ItemDisplayBinding="{Binding Nombre}"
+            x:Name="CursoPicker"/>
         <Button Text="Guardar"
                 x:Name="guardarButton"
                 Clicked="guardarButton_Clicked"/>
+        
+      
 
     </VerticalStackLayout>
 </ContentPage>
