@@ -33,13 +33,18 @@ public partial class ListarAlumnos : ContentPage
 
     private void filtroSearchBar_TextChanged(object sender, TextChangedEventArgs e)
     {
-
+        string filtro = filtroSearchBar.Text.ToLower();
+        if (filtro.Length > 0)
+        {
+            AlumnosCollection.ItemsSource = ListaAlumnos.Where(x => x.Nombre.ToLower().Contains(filtro));
+        }
+        else
+        {
+            AlumnosCollection.ItemsSource = ListaAlumnos;
+        }
     }
 
-    private void filtroCursosBar_TextChanged(object sender, TextChangedEventArgs e)
-    {
-
-    }
+    
 
     private async void NuevoAlumnoBoton_Clicked(object sender, EventArgs e)
     {

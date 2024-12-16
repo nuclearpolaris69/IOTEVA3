@@ -27,11 +27,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Clicked="NuevoAlumnoBoton_Clicked"/>
-            <SearchBar Placeholder="Buscar"
-                       x:Name="filtroCursosBar"
-                       Grid.Row="1"
-                       Grid.Column="0"
-                       TextChanged="filtroCursosBar_TextChanged"/>
+            
             <Button Text="Ver Cursos"
                     x:Name="VerAlumnosBoton"
                     Grid.Row="1"
