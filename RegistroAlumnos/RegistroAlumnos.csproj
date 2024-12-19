@@ -71,6 +71,9 @@
 	  <MauiXaml Update="Views\CrearAlumno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\EditarAlumno.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ListarAlumnos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
